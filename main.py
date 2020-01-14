@@ -15,11 +15,18 @@ def run_game():
     pg.display.set_caption("Py Eating Snake")
 
     # Make snake
-    #snake = Snake(settings,screen)
+    snake = Snake(settings,screen)
 
     # Start main loop of game.
     while True:
+
+        # Watch for keyboard and mouse events.
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                sys.exit()
+
         gf.update_screen(settings, screen)
+        snake.update()
 
 
 
