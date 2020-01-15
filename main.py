@@ -25,8 +25,8 @@ def run_game():
             if event.type == pg.QUIT:
                 sys.exit()
 
-        gf.update_screen(settings, screen)
-        snake.update()
+        gf.update_screen(settings, screen, snake)
+
 
 
 
