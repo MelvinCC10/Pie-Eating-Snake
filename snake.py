@@ -35,26 +35,32 @@ class Snake(Sprite):
 
     def update(self):
         """ Move the snakes location """
+        print(self.prevCenterx)
+        print(self.rect.centerx)
+
 
         #Update the decimal position of the snake.
         if self.moving_right and self.rect.right< self.screen_rect.right:
             self.prevCenterx = self.rect.centerx
+            self.prevCentery = self.rect.centery
             self.centerHort += self.settings.snake_speed_factor
             self.rect.centerx = self.centerHort
         if self.moving_left and self.rect.left > 0:
             self.prevCenterx = self.rect.centerx
+            self.prevCentery = self.rect.centery
             self.centerHort -= self.settings.snake_speed_factor
             self.rect.centerx = self.centerHort
 
         if self.moving_up and self.rect.top > self.screen_rect.top:
+            self.prevCenterx = self.rect.centerx
             self.prevCentery = self.rect.centery
             self.centerVert -= self.settings.snake_speed_factor
             self.rect.centery = self.centerVert
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
+            self.prevCenterx = self.rect.centerx
             self.prevCentery = self.rect.centery
             self.centerVert += self.settings.snake_speed_factor
             self.rect.centery = self.centerVert
-
 
     def draw_snake(self):
         """ Draw the bullet to the screen """

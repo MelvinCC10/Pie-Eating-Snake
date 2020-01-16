@@ -46,8 +46,8 @@ def update_screen(settings,screen, snake,tail):
 
     #draw snake to screen
     snake.update()
-    tail.update(snake)
     snake.draw_snake()
+    tail.update(snake)
     tail.draw_snake()
 
     # Make the most recently drawn screen visible
