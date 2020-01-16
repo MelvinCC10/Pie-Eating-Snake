@@ -9,6 +9,7 @@ class Settings():
         self.bg_color = (230, 230, 230)
 
         # Snake settings
-        self.snake_width = 5
-        self.snake_height = 5
+        self.snake_width = 10
+        self.snake_height = 10
         self.snake_color = 60, 60, 60
+        self.snake_speed_factor = 1.5
