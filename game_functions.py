@@ -39,7 +39,7 @@ def check_event(settings, screen, snake):
             check_keyup_events(event, snake)
 
 
-def update_screen(settings,screen, snake,tail):
+def update_screen(settings,screen, snake,tail,tail2):
     """ Update images on the screen and flip to the new screen """
     # Redraw the screen dring each pass through the loop
     screen.fill(settings.bg_color)
@@ -47,8 +47,17 @@ def update_screen(settings,screen, snake,tail):
     #draw snake to screen
     snake.update()
     snake.draw_snake()
+
     tail.update(snake)
     tail.draw_snake()
+
+    tail2.update(tail)
+    tail2.draw_snake()
+    print('---')
+    print(snake.rect.centery)
+    print(tail.rect.centery)
+    print(tail2.rect.centery)
+
 
     # Make the most recently drawn screen visible
     pg.display.flip()

@@ -1,6 +1,7 @@
 import sys
 
 import pygame as pg
+from pygame.sprite import Group
 
 from settings import Settings
 import game_functions as gf
@@ -17,14 +18,17 @@ def run_game():
 
     # Make snake
     snake = Snake(settings,screen)
-    tail = Tail(settings,screen)
+    tail = Group()
+
+    tail = Tail(settings,screen,snake)
+    tail2 = Tail(settings,screen,tail)
 
     # Start main loop of game.
     while True:
 
         # Watch for keyboard and mouse events.
         gf.check_event(settings, screen, snake)
-        gf.update_screen(settings, screen, snake, tail)
+        gf.update_screen(settings, screen, snake, tail,tail2)
 
 
 
