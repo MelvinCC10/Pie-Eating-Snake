@@ -18,10 +18,14 @@ def run_game():
 
     # Make snake
     snake = Snake(settings,screen)
-    tail = Group()
+    tail = []
 
-    tail = Tail(settings,screen,snake)
-    tail2 = Tail(settings,screen,tail)
+    tail.append(Tail(settings,screen,snake))
+    for i in range(20):
+        tail.append(Tail(settings,screen,tail[-1]))
+        print(tail[-1].rect.centery)
+
+
 
     # Start main loop of game.
     while True:
