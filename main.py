@@ -20,8 +20,11 @@ def run_game():
     snake = Snake(settings,screen)
     tail = []
 
+    """ prototype code for creating memberers
+        of the tail and storing them in alist
+    """
     tail.append(Tail(settings,screen,snake))
-    for i in range(20):
+    for i in range(100):
         tail.append(Tail(settings,screen,tail[-1]))
         print(tail[-1].rect.centery)
 
@@ -32,7 +35,7 @@ def run_game():
 
         # Watch for keyboard and mouse events.
         gf.check_event(settings, screen, snake)
-        gf.update_screen(settings, screen, snake, tail,tail2)
+        gf.update_screen(settings, screen, snake, tail)
 
 
 
