@@ -8,24 +8,36 @@ def check_keydown_events(event,settings,screen,snake):
     """ Respond to keypresses """
     if event.key == pg.K_d:
         snake.moving_right = True
+        snake.moving_left = False
+        snake.moving_up = False
+        snake.moving_down = False
     elif event.key == pg.K_a:
         snake.moving_left = True
+        snake.moving_up = False
+        snake.moving_down = False
+        snake.moving_right = False
     elif event.key == pg.K_w:
         snake.moving_up = True
+        snake.moving_down = False
+        snake.moving_right = False
+        snake.moving_left = False
     elif event.key == pg.K_s:
         snake.moving_down = True
+        snake.moving_right = False
+        snake.moving_left = False
+        snake.moving_up = False
 
 
 def check_keyup_events(event,snake):
     """ Respond to keypresses """
-    if event.key == pg.K_d:
+    """if event.key == pg.K_d:
         snake.moving_right = False
     elif event.key == pg.K_a:
         snake.moving_left = False
     elif event.key == pg.K_w:
         snake.moving_up = False
     elif event.key == pg.K_s:
-        snake.moving_down = False
+        snake.moving_down = False"""
 
 
 def check_event(settings, screen, snake):
