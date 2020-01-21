@@ -18,7 +18,7 @@ class Snake(Sprite):
 
         # setting intial previous location for tails to follow
         self.prevCenterx = self.rect.centerx
-        self.prevCentery = (self.rect.centery) + 1#(self.settings.snake_height)
+        self.prevCentery = (self.rect.centery) + 11#(self.settings.snake_height)
 
         # Store the snakes position as a decimal value
         self.centerVert = float(self.rect.centery)
@@ -37,7 +37,13 @@ class Snake(Sprite):
         self.prevCenterx = self.rect.centerx
         self.prevCentery = self.rect.centery
 
-    def update(self):
+    def update(self,tail):
+
+        for i in range(len(tail)):
+            if self.rect.colliderect(tail[i]):
+                print("True")
+
+
         """ Move the snakes location """
         #Update the decimal position of the snake.
         if self.moving_right and self.rect.right< self.screen_rect.right:
@@ -58,6 +64,7 @@ class Snake(Sprite):
             self.centerVert += self.settings.snake_speed_factor
             self.rect.centery = self.centerVert
 
+
     def draw_snake(self):
         """ Draw the bullet to the screen """
         pg.draw.rect(self.screen,self.color,self.rect)
@@ -71,17 +78,14 @@ class Tail(Snake):
         self.lead = lead
         # Setting intial location for this portion of the tail
         self.rect.centerx = lead.prevCenterx
-        self.rect.centery = lead.prevCentery + 1
+        self.rect.centery = lead.prevCentery + 11
 
         # Setting intial location for this portion of the tail previous location
         self.prevCenterx = self.rect.centerx
         self.prevCentery = (self.rect.centery) #+ (self.settings.snake_height)
 
 
-
-    def update(self,lead):
-
-
+    def update(self,lead,head):
         if (self.rect.centery != lead.prevCentery):
             self.previous_location()
             self.rect.centery = lead.prevCentery

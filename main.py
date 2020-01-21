@@ -24,7 +24,7 @@ def run_game():
         of the tail and storing them in alist
     """
     tail.append(Tail(settings,screen,snake))
-    for i in range(500):
+    for i in range(100):
         tail.append(Tail(settings,screen,tail[-1]))
         print(tail[-1].rect.centery)
 

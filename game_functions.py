@@ -57,13 +57,13 @@ def update_screen(settings,screen,snake,tail):
     screen.fill(settings.bg_color)
 
     #draw snake to screen
-    snake.update()
+    snake.update(tail)
     snake.draw_snake()
 
-    tail[0].update(snake)
+    tail[0].update(snake,snake)
     tail[0].draw_snake()
     for i in range(len(tail)-1):
-        tail[i+1].update(tail[i])
+        tail[i+1].update(tail[i],snake)
         tail[i+1].draw_snake()
 
 
