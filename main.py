@@ -10,6 +10,7 @@ from snake import Tail
 
 
 def run_game():
+
     # Initialize game and create a screen object
     pg.init()
     settings = Settings()
@@ -20,14 +21,10 @@ def run_game():
     snake = Snake(settings,screen)
     tail = []
 
-    """ prototype code for creating memberers
-        of the tail and storing them in alist
-    """
+    """ prototype code for creating memberers of the tail and storing them in alist """
     tail.append(Tail(settings,screen,snake))
     for i in range(100):
         tail.append(Tail(settings,screen,tail[-1]))
-        print(tail[-1].rect.centery)
-
 
 
     # Start main loop of game.

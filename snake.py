@@ -1,3 +1,5 @@
+import sys
+
 import pygame as pg
 from pygame.sprite import Sprite
 
@@ -39,10 +41,15 @@ class Snake(Sprite):
 
     def update(self,tail):
 
+        """ Checking for collisions"""
         for i in range(len(tail)):
             if self.rect.colliderect(tail[i]):
-                print("True")
-
+                print("Game Over")
+                self.moving_right = False
+                self.moving_left = False
+                self.moving_up = False
+                self.moving_down = False
+                sys.exit()
 
         """ Move the snakes location """
         #Update the decimal position of the snake.
@@ -64,14 +71,14 @@ class Snake(Sprite):
             self.centerVert += self.settings.snake_speed_factor
             self.rect.centery = self.centerVert
 
-
     def draw_snake(self):
         """ Draw the bullet to the screen """
         pg.draw.rect(self.screen,self.color,self.rect)
 
 
 class Tail(Snake):
-
+    """ A class for members of the tail of the head """
+    
     def __init__(self,settings,screen,lead):
         super().__init__(settings, screen)
 
@@ -83,7 +90,6 @@ class Tail(Snake):
         # Setting intial location for this portion of the tail previous location
         self.prevCenterx = self.rect.centerx
         self.prevCentery = (self.rect.centery) #+ (self.settings.snake_height)
-
 
     def update(self,lead,head):
         if (self.rect.centery != lead.prevCentery):
