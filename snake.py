@@ -78,7 +78,7 @@ class Snake(Sprite):
 
 class Tail(Snake):
     """ A class for members of the tail of the head """
-    
+
     def __init__(self,settings,screen,lead):
         super().__init__(settings, screen)
 
@@ -99,3 +99,11 @@ class Tail(Snake):
         if (self.rect.centerx != lead.prevCenterx):
             self.previous_location()
             self.rect.centerx = lead.prevCenterx
+
+class Food():
+
+    def __init__(self):
+        """ create a block that randomly appears on screen but not in a loction
+        where the head of tail of the snake exist, when the snake head comes in
+        another tail member is created and added to the end of the tail and the
+        end of the tail list """
