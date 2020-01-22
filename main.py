@@ -17,24 +17,19 @@ def run_game():
     screen = pg.display.set_mode((settings.screen_width, settings.screen_height))
     pg.display.set_caption("Py Eating Snake")
 
-    # Make snake
+    # Creating the snake head and tail classes
     snake = Snake(settings,screen)
     tail = []
-
     """ prototype code for creating memberers of the tail and storing them in alist """
     tail.append(Tail(settings,screen,snake))
     for i in range(100):
         tail.append(Tail(settings,screen,tail[-1]))
 
-
     # Start main loop of game.
     while True:
-
         # Watch for keyboard and mouse events.
         gf.check_event(settings, screen, snake)
         gf.update_screen(settings, screen, snake, tail)
 
-
-
-
+#Staring Game
 run_game()
