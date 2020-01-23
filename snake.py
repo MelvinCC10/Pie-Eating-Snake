@@ -1,4 +1,5 @@
 import sys
+import random
 
 import pygame as pg
 from pygame.sprite import Sprite
@@ -72,7 +73,7 @@ class Snake(Sprite):
             self.rect.centery = self.centerVert
 
     def draw_snake(self):
-        """ Draw the bullet to the screen """
+        """ Draw the snake to the screen """
         pg.draw.rect(self.screen,self.color,self.rect)
 
 
@@ -100,10 +101,26 @@ class Tail(Snake):
             self.previous_location()
             self.rect.centerx = lead.prevCenterx
 
-class Food():
+class Food(Sprite):
+    """ Protptype code """
+    """ A class for creating food for the snake to eat """
 
-    def __init__(self):
-        """ create a block that randomly appears on screen but not in a loction
-        where the head of tail of the snake exist, when the snake head comes in
-        another tail member is created and added to the end of the tail and the
-        end of the tail list """
+    def __init__(self, settings, screen):
+        super(Food, self).__init__()
+        self.screen = screen
+        self.screen_rect = screen.get_rect()
+        self.settings = settings
+
+        # create a snake rect at (0,0) and then set correct position
+        self.rect = pg.Rect(0, 0, self.settings.food_width, self.settings.food_height)
+
+        # Color of the snake head
+        self.color = settings.food_color
+
+    def setPos(self):
+        self.rect.centerx = random.randint(0, self.settings.screen_width)
+        self.rect.centery = random.randint(0, self.settings.screen_height)
+
+    def draw_food(self):
+        """ Draw the food to the screen """
+        pg.draw.rect(self.screen,self.color,self.rect)

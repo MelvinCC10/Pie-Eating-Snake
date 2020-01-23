@@ -7,6 +7,7 @@ from settings import Settings
 import game_functions as gf
 from snake import Snake
 from snake import Tail
+from snake import Food
 
 
 def run_game():
@@ -19,6 +20,7 @@ def run_game():
 
     # Creating the snake head and tail classes
     snake = Snake(settings,screen)
+    testFood = Food(settings, screen)
     tail = []
     """ prototype code for creating memberers of the tail and storing them in alist """
     tail.append(Tail(settings,screen,snake))
@@ -26,10 +28,11 @@ def run_game():
         tail.append(Tail(settings,screen,tail[-1]))
 
     # Start main loop of game.
+    testFood.setPos()
     while True:
         # Watch for keyboard and mouse events.
         gf.check_event(settings, screen, snake)
-        gf.update_screen(settings, screen, snake, tail)
+        gf.update_screen(settings, screen, snake, tail, testFood)
 
 #Staring Game
 run_game()

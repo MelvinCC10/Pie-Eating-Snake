@@ -51,7 +51,7 @@ def check_event(settings, screen, snake):
             check_keyup_events(event, snake)
 
 
-def update_screen(settings,screen,snake,tail):
+def update_screen(settings,screen,snake,tail,testFood):
     """ Update images on the screen and flip to the new screen """
     # Redraw the screen dring each pass through the loop
     screen.fill(settings.bg_color)
@@ -59,6 +59,7 @@ def update_screen(settings,screen,snake,tail):
     #draw snake to screen
     snake.update(tail)
     snake.draw_snake()
+    testFood.draw_food()
 
     tail[0].update(snake,snake)
     tail[0].draw_snake()
