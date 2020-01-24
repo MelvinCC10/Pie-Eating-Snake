@@ -10,6 +10,8 @@ from snake import Tail
 from snake import Food
 
 
+
+
 def run_game():
 
     # Initialize game and create a screen object
@@ -32,6 +34,12 @@ def run_game():
     testFood.setPos()
 
     while True:
+
+        # setting frame rate
+        clock = pg.time.Clock()
+        clock.tick_busy_loop(30)
+
+
         # Watch for keyboard and mouse events.
         gf.check_event(settings, screen, snake)
         gf.update_screen(settings, screen, snake, tail, testFood)
