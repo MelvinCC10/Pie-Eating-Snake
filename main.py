@@ -24,10 +24,9 @@ def run_game():
     snake = Snake(settings,screen)
     testFood = Food(settings, screen)
     tail = []
+
     """ prototype code for creating memberers of the tail and storing them in alist """
     tail.append(Tail(settings,screen,snake))
-    for i in range(10):
-        tail.append(Tail(settings,screen,tail[-1]))
 
     # Start main loop of game.
     """ Protptype code """

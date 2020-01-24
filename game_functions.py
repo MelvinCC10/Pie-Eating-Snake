@@ -60,7 +60,7 @@ def update_screen(settings,screen,snake,tail,testFood):
     snake.update(tail)
     snake.draw_snake()
     """ Protptype code """
-    testFood.update(tail)
+    testFood.update(tail,settings,screen,snake)
     testFood.draw_food()
 
     tail[0].update(snake,snake)

@@ -121,12 +121,15 @@ class Food(Sprite):
         self.rect.centerx = random.randint(0, self.settings.screen_width)
         self.rect.centery = random.randint(0, self.settings.screen_height)
 
-    def update(self,tail):
+    def update(self,tail,settings,screen,snake):
 
         """ Checking for collisions"""
-        for i in range(len(tail)):
-            if self.rect.colliderect(tail[i]):
-                self.setPos()
+        if self.rect.colliderect(snake):
+            self.setPos()
+
+            """ prototype code for creating memberers of the tail and storing them in alist """
+            tail.append(Tail(settings,screen,snake))
+
 
     def draw_food(self):
         """ Draw the food to the screen """
