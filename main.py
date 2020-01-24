@@ -24,11 +24,13 @@ def run_game():
     tail = []
     """ prototype code for creating memberers of the tail and storing them in alist """
     tail.append(Tail(settings,screen,snake))
-    for i in range(100):
+    for i in range(10):
         tail.append(Tail(settings,screen,tail[-1]))
 
     # Start main loop of game.
+    """ Protptype code """
     testFood.setPos()
+
     while True:
         # Watch for keyboard and mouse events.
         gf.check_event(settings, screen, snake)

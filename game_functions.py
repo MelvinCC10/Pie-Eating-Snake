@@ -59,6 +59,8 @@ def update_screen(settings,screen,snake,tail,testFood):
     #draw snake to screen
     snake.update(tail)
     snake.draw_snake()
+    """ Protptype code """
+    testFood.update(tail)
     testFood.draw_food()
 
     tail[0].update(snake,snake)

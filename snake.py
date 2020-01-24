@@ -121,6 +121,13 @@ class Food(Sprite):
         self.rect.centerx = random.randint(0, self.settings.screen_width)
         self.rect.centery = random.randint(0, self.settings.screen_height)
 
+    def update(self,tail):
+
+        """ Checking for collisions"""
+        for i in range(len(tail)):
+            if self.rect.colliderect(tail[i]):
+                self.setPos()
+
     def draw_food(self):
         """ Draw the food to the screen """
         pg.draw.rect(self.screen,self.color,self.rect)
