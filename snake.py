@@ -21,7 +21,7 @@ class Snake(Sprite):
 
         # setting intial previous location for tails to follow
         self.prevCenterx = self.rect.centerx
-        self.prevCentery = (self.rect.centery) + 11#(self.settings.snake_height)
+        self.prevCentery = (self.rect.centery) + self.settings.snake_height + 1
 
         # Store the snakes position as a decimal value
         self.centerVert = float(self.rect.centery)
@@ -85,8 +85,8 @@ class Tail(Snake):
 
         self.lead = lead
         # Setting intial location for this portion of the tail
-        self.rect.centerx = lead.prevCenterx
-        self.rect.centery = lead.prevCentery + 11
+        self.rect.centerx = lead.prevCenterx 
+        self.rect.centery = lead.prevCentery + self.settings.snake_height + 1
 
         # Setting intial location for this portion of the tail previous location
         self.prevCenterx = self.rect.centerx
