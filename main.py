@@ -20,17 +20,18 @@ def run_game():
     screen = pg.display.set_mode((settings.screen_width, settings.screen_height))
     pg.display.set_caption("Py Eating Snake")
 
-    # Creating the snake head and tail classes
+    # Creating the snake head, tail, and food objects
     snake = Snake(settings,screen)
-    testFood = Food(settings, screen)
+    food = Food(settings, screen)
+    food.setPos()
     tail = []
 
     """ prototype code for creating memberers of the tail and storing them in alist """
     tail.append(Tail(settings,screen,snake))
 
     # Start main loop of game.
-    """ Protptype code """
-    testFood.setPos()
+
+
 
     while True:
 
@@ -41,7 +42,7 @@ def run_game():
 
         # Watch for keyboard and mouse events.
         gf.check_event(settings, screen, snake)
-        gf.update_screen(settings, screen, snake, tail, testFood)
+        gf.update_screen(settings, screen, snake, tail, food)
 
 #Staring Game
 run_game()
