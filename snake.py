@@ -85,7 +85,7 @@ class Tail(Snake):
 
         self.lead = lead
         # Setting intial location for this portion of the tail
-        self.rect.centerx = lead.prevCenterx 
+        self.rect.centerx = lead.prevCenterx
         self.rect.centery = lead.prevCentery + self.settings.snake_height + 1
 
         # Setting intial location for this portion of the tail previous location

@@ -62,11 +62,12 @@ def update_screen(settings,screen,snake,tail,food):
     food.update(tail,settings,screen,snake)
     food.draw_food()
 
-    tail[0].update(snake,snake)
-    tail[0].draw_snake()
-    for i in range(len(tail)-1):
-        tail[i+1].update(tail[i],snake)
-        tail[i+1].draw_snake()
+    if (tail):
+        tail[0].update(snake,snake)
+        tail[0].draw_snake()
+        for i in range(len(tail)-1):
+            tail[i+1].update(tail[i],snake)
+            tail[i+1].draw_snake()
 
 
 

@@ -27,7 +27,7 @@ def run_game():
     tail = []
 
     """ prototype code for creating memberers of the tail and storing them in alist """
-    tail.append(Tail(settings,screen,snake))
+    #tail.append(Tail(settings,screen,snake))
 
     # Start main loop of game.
 
