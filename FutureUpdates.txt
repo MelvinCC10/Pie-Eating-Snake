@@ -1,0 +1,5 @@
+- Prevent player from going out of screen
+- Prevent player from going backwards on themselves
+- Add a length tracking score
+- Add a retry option after you die
+- Give option to store score on to some data base
