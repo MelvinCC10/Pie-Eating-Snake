@@ -2,4 +2,5 @@
 - Prevent player from going backwards on themselves
 - Add a length tracking score
 - Add a retry option after you die
-- Give option to store score on to some data base
+- Give option to store score on to some data base\
+- add the ability to snip your own tail up to 3 times befor its a game over
