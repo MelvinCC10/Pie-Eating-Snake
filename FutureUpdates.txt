@@ -3,3 +3,5 @@
 - Add a length tracking score
 - Add a retry option after you die
 - Give option to store score on to some data base
+- add the ability to snip your own tail up to 3 times befor its a game over
+- refactor snake class to utilize the linked list data structures
