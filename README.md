@@ -7,7 +7,9 @@ Play as a hungry snake! eat pies to get points but be careful not to eat your se
 
 # Futures Updates
 ### Design Changes
-- Refactor classes to utilize a linked list data structure
+- Refactor code to use the MVC desgin pattern
+- utilize a linked list data structure for snake class
+- Create a Desgin Doc and Outline software architect
 
 ### Features
 - Add a length tracking score
