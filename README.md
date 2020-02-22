@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Py-Eating-Snake V1
+=======
+# Py-Eating-Snake V2
+>>>>>>> 9ed4a0ada1389015cf6bc78cd6d3c2e7fc495336
 Play as a hungry snake! eat pies to get points but be careful not to eat your self!
 
 # Table of Contents
