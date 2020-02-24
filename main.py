@@ -14,7 +14,6 @@ def run_game():
         models.update(controller.get_output())
         view.update(models.get_output())
         controller.update()
-    
 
 #Staring Game
 run_game()
